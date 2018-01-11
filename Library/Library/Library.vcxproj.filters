@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Directx11">
+      <UniqueIdentifier>{424fc07d-3d4f-44c4-a786-b81913d0d5c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Directx11\GraphicsDevice">
+      <UniqueIdentifier>{30c5a035-ce11-465f-a428-d34d4e0172b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ApplicationBase">
+      <UniqueIdentifier>{1a208b1a-ab9c-473c-ad6c-d78f000aa2e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Window">
+      <UniqueIdentifier>{700750f3-3ef6-461f-a505-38d0b873c138}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Singleton">
+      <UniqueIdentifier>{093b3c95-4001-44c8-ac70-58fcebcd7e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BehaviorTree">
+      <UniqueIdentifier>{a3aafa9d-5af3-4abe-868e-591364749786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BehaviorTree\NodeBase">
+      <UniqueIdentifier>{f2cc26ba-10d1-4a30-b7f4-d21b0be9e7d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Directx11\GraphicsDevice\GraphicsDevice.h">
+      <Filter>Directx11\GraphicsDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationBase\ApplicationBase.h">
+      <Filter>ApplicationBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\Window.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton\Singleton.h">
+      <Filter>Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="BehaviorTree\NodeBase.h">
+      <Filter>BehaviorTree\NodeBase</Filter>
+    </ClInclude>
+    <ClInclude Include="BehaviorTree\BehaviorTree.h">
+      <Filter>BehaviorTree</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Directx11\GraphicsDevice\GraphicsDevice.cpp">
+      <Filter>Directx11\GraphicsDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationBase\ApplicationBase.cpp">
+      <Filter>ApplicationBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Window.cpp">
+      <Filter>Window</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviorTree\BehaviorTree.cpp">
+      <Filter>BehaviorTree</Filter>
+    </ClCompile>
+    <ClCompile Include="BehaviorTree\NodeBase.cpp">
+      <Filter>BehaviorTree\NodeBase</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
