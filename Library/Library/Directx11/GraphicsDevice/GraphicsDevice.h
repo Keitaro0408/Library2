@@ -3,12 +3,15 @@
 #include <D3D11.h>
 #include <Windows.h>
 
+#include "..\..\Singleton\Singleton.h"
+
 namespace Lib
 {
 	namespace Dx11
 	{
 		class GraphicsDevice
 		{
+			friend Singleton<GraphicsDevice>;
 		public:
 			/**
 			 * スクリーンの設定を切り替える関数
@@ -41,6 +44,29 @@ namespace Lib
 			 * @param[in] _isStencil 深度テストを使用するかのフラグ
 			 */
 			void SetDepthStencilTest(bool _isStencil);
+
+			/**
+			 * DirectX11デバイスを取得する関数
+			 * @return DirectX11デバイス
+			 */
+			inline ID3D11Device* GetDevice() const
+			{
+				return m_pDevice;
+			}
+
+			/**
+			 * DirectX11デバイスコンテキストを取得する関数
+			 * @return DirectX11デバイスコンテキスト
+			 */
+			inline ID3D11DeviceContext* GetDeviceContext() const
+			{
+				return m_pDeviceContext;
+			}
+
+			inline RECT GetWindowRect() const
+			{
+				return m_WindowRect;
+			}
 
 		private:
 			GraphicsDevice() : 

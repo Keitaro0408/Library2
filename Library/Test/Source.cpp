@@ -4,26 +4,7 @@
 #include <iterator>
 #include <random>
 
-void main()
+int main()
 {
-	Lib::BehaviorTree test;
-	test.Initialize(Lib::NodeBase::SEQUENCE_TYPE);
-	test.SetNode("UŒ‚", Lib::NodeBase::SEQUENCE_TYPE);
-	test.SetNode("UŒ‚", "•¨—", Lib::NodeBase::SEQUENCE_TYPE);
-	test.SetNode("UŒ‚", "–‚–@", Lib::NodeBase::RANDOM_TYPE);
-	test.SetNode("–‚–@", "‰Î", Lib::NodeBase::SEQUENCE_TYPE);
-	test.SetNode("–‚–@", "…", Lib::NodeBase::SEQUENCE_TYPE);
-	test.SetNode("–‚–@", "•X", Lib::NodeBase::SEQUENCE_TYPE);
-
-	test.SetNode("–hŒä", Lib::NodeBase::SEQUENCE_TYPE);
-	
-	test.Run();
-	test.Run();
-	test.Run();
-	test.Run();
-	test.Run();
-	test.Run();
-
-
-	getchar();
+	return 0;
 }

@@ -78,6 +78,7 @@
       <AdditionalIncludeDirectories>$(DXSDK_DIR)Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <DisableSpecificWarnings>4005;4717;4006;4221;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Lib>
       <AdditionalLibraryDirectories>$(DXSDK_DIR)Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -98,6 +99,9 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(DXSDK_DIR)Include;</AdditionalIncludeDirectories>
+      <DisableSpecificWarnings>4005;4717;4006;4221;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
+      <PrecompiledHeader>Use</PrecompiledHeader>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -121,21 +125,58 @@
   <ItemGroup>
     <ClInclude Include="ApplicationBase\ApplicationBase.h" />
     <ClInclude Include="BehaviorTree\BehaviorTree.h" />
+    <ClInclude Include="DebugTool\Timer\DebugTimer.h" />
     <ClInclude Include="Directx11\GraphicsDevice\GraphicsDevice.h" />
     <ClInclude Include="BehaviorTree\NodeBase.h" />
+    <ClInclude Include="DxInput\DXInputDevice.h" />
+    <ClInclude Include="DxInput\KeyBoard\KeyDevice.h" />
+    <ClInclude Include="DxInput\Mouse\MouseDevice.h" />
+    <ClInclude Include="Math\Math.h" />
+    <ClInclude Include="Math\MyMatrix.h" />
+    <ClInclude Include="Math\MyVector.h" />
+    <ClInclude Include="ObjectBase\ObjectBase.h" />
+    <ClInclude Include="SceneManager\SceneBase\SceneBase.h" />
+    <ClInclude Include="SceneManager\SceneManager.h" />
+    <ClInclude Include="ShaderManager\ShaderManager.h" />
     <ClInclude Include="Singleton\Singleton.h" />
+    <ClInclude Include="Sound\SoundManager.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TaskManager\TaskBase\DrawTask\DrawTask.h" />
+    <ClInclude Include="TaskManager\TaskBase\TaskBase.h" />
+    <ClInclude Include="TaskManager\TaskBase\UpdateTask\UpdateTask.h" />
+    <ClInclude Include="TaskManager\TaskManager.h" />
+    <ClInclude Include="TaskManager\TaskManager_private.h" />
+    <ClInclude Include="Texture\TextureManager.h" />
+    <ClInclude Include="Utility\Utility.h" />
+    <ClInclude Include="Vertex2D\Vertex2D.h" />
     <ClInclude Include="Window\Window.h" />
+    <ClInclude Include="XInput\XInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ApplicationBase\ApplicationBase.cpp" />
     <ClCompile Include="BehaviorTree\BehaviorTree.cpp" />
+    <ClCompile Include="DebugTool\Timer\DebugTimer.cpp" />
     <ClCompile Include="Directx11\GraphicsDevice\GraphicsDevice.cpp" />
     <ClCompile Include="BehaviorTree\NodeBase.cpp" />
+    <ClCompile Include="DxInput\DXInputDevice.cpp" />
+    <ClCompile Include="DxInput\KeyBoard\KeyDevice.cpp" />
+    <ClCompile Include="DxInput\Mouse\MouseDevice.cpp" />
+    <ClCompile Include="Math\Math.cpp" />
+    <ClCompile Include="Math\MyMatrix.cpp" />
+    <ClCompile Include="Math\MyVector.cpp" />
+    <ClCompile Include="ObjectBase\ObjectBase.cpp" />
+    <ClCompile Include="SceneManager\SceneBase\SceneBase.cpp" />
+    <ClCompile Include="SceneManager\SceneManager.cpp" />
+    <ClCompile Include="ShaderManager\ShaderManager.cpp" />
+    <ClCompile Include="Sound\SoundManager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TaskManager\TaskBase\TaskBase.cpp" />
+    <ClCompile Include="Texture\TextureManager.cpp" />
+    <ClCompile Include="Vertex2D\Vertex2D.cpp" />
     <ClCompile Include="Window\Window.cpp" />
+    <ClCompile Include="XInput\XInput.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

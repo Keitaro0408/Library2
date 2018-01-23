@@ -37,7 +37,7 @@ namespace Lib
 		 *
 		 * ライブラリで自動に呼ばれる
 		 */
-		virtual void Initialize() = 0;
+		virtual bool Initialize() = 0;
 
 		/**
 		 * 開放処理
@@ -50,7 +50,7 @@ namespace Lib
 		 * この関数が毎フレーム呼ばれる
 		 * @return trueになると終了する
 		 */
-		bool MainLoop();
+		virtual bool MainLoop();
 
 		int Boot();
 

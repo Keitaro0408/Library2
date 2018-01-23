@@ -1,3 +1,4 @@
+#include "..\..\stdafx.h"
 #include "GraphicsDevice.h"
 
 //----------------------------------------------------------------------
@@ -23,7 +24,7 @@ namespace Lib
 		{
 			if (m_pDevice != nullptr)
 			{
-				OutputDebugString(TEXT("m_pDeviceDX11ManagerƒNƒ‰ƒX‚Í‚·‚Å‚É‰Šú‰»‚³‚ê‚Ä‚¢‚Ü‚·"));
+				MyOutputDebugString(TEXT("m_pDeviceDX11ManagerƒNƒ‰ƒX‚Í‚·‚Å‚É‰Šú‰»‚³‚ê‚Ä‚¢‚Ü‚·"));
 				return false;
 			}
 
@@ -33,17 +34,17 @@ namespace Lib
 
 			if (!InitDevice())
 			{
-				OutputDebugString(TEXT("InitDevice‚É¸”s‚µ‚Ü‚µ‚½"));
+				MyOutputDebugString(TEXT("InitDevice‚É¸”s‚µ‚Ü‚µ‚½"));
 				return false;
 			}
 
 			if (!InitDisplay())
 			{
-				OutputDebugString(TEXT("InitDisplay‚É¸”s‚µ‚Ü‚µ‚½"));
+				MyOutputDebugString(TEXT("InitDisplay‚É¸”s‚µ‚Ü‚µ‚½"));
 				ReleaseDevice();
 				return false;
 			}
-			OutputDebugString(TEXT("DX11Manager‚Ì‰Šú‰»‚É¬Œ÷\n"));
+			MyOutputDebugString(TEXT("DX11Manager‚Ì‰Šú‰»‚É¬Œ÷\n"));
 
 			return false;
 		}

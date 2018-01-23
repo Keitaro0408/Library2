@@ -22,6 +22,60 @@
     <Filter Include="BehaviorTree\NodeBase">
       <UniqueIdentifier>{f2cc26ba-10d1-4a30-b7f4-d21b0be9e7d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="XInput">
+      <UniqueIdentifier>{0a779d29-7e11-468b-ab3b-8fbeea02f127}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShaderManager">
+      <UniqueIdentifier>{eee29aa0-cfbc-4c0e-8fe9-b83a54d9ddaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Vertex2D">
+      <UniqueIdentifier>{d0bf7c0d-a380-48e5-a415-678dcc2aa6b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaskManager">
+      <UniqueIdentifier>{ccf886c3-0824-4e5a-bc44-76e9e1d59450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaskManager\TaskBase">
+      <UniqueIdentifier>{8f76d2c1-38bd-40dc-ad28-230125de5804}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ObjectBase">
+      <UniqueIdentifier>{c0aa190b-9938-47f8-9867-d66ebf9b5c79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{b310563b-6dcf-466c-9629-ef2514892005}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{cfa3c486-eaed-4dea-8ef8-43b4d3be84c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SoundManager">
+      <UniqueIdentifier>{ad258067-9e0a-453a-880c-6d99a609774a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DebugTool">
+      <UniqueIdentifier>{ad058eaa-dee6-4c8f-8d55-ea25537363ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneManager">
+      <UniqueIdentifier>{f7ac7f30-62cc-4805-ae91-00c131d25a85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SceneManager\SceneBase">
+      <UniqueIdentifier>{5a01523e-0aec-4f2d-ad27-d64ba8d877e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaskManager\TaskBase\UpdateTask">
+      <UniqueIdentifier>{5881ac4e-11a1-4cb3-aac3-e6f5cee60349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TaskManager\TaskBase\DrawTask">
+      <UniqueIdentifier>{78ae6ac7-43b8-4690-a58e-510020ac6ace}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputManager">
+      <UniqueIdentifier>{473ee0b7-0833-4240-9f7c-a839e15b1275}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputManager\KeyDevice">
+      <UniqueIdentifier>{586d5068-853e-46b9-afdd-73b1a5bfcd03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InputManager\MouseDevice">
+      <UniqueIdentifier>{eefc8b50-88ba-43df-915b-43593e0cb709}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TextureManager">
+      <UniqueIdentifier>{3bd551c6-8985-48ce-b6f3-ad1b25346dd3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />
@@ -43,6 +97,69 @@
     <ClInclude Include="BehaviorTree\BehaviorTree.h">
       <Filter>BehaviorTree</Filter>
     </ClInclude>
+    <ClInclude Include="XInput\XInput.h">
+      <Filter>XInput</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderManager\ShaderManager.h">
+      <Filter>ShaderManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex2D\Vertex2D.h">
+      <Filter>Vertex2D</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManager\TaskManager.h">
+      <Filter>TaskManager</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManager\TaskBase\TaskBase.h">
+      <Filter>TaskManager\TaskBase</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectBase\ObjectBase.h">
+      <Filter>ObjectBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\Utility.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\MyMatrix.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\MyVector.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound\SoundManager.h">
+      <Filter>SoundManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugTool\Timer\DebugTimer.h">
+      <Filter>DebugTool</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager\SceneManager.h">
+      <Filter>SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager\SceneBase\SceneBase.h">
+      <Filter>SceneManager\SceneBase</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManager\TaskBase\DrawTask\DrawTask.h">
+      <Filter>TaskManager\TaskBase\DrawTask</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManager\TaskBase\UpdateTask\UpdateTask.h">
+      <Filter>TaskManager\TaskBase\UpdateTask</Filter>
+    </ClInclude>
+    <ClInclude Include="TaskManager\TaskManager_private.h">
+      <Filter>TaskManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DxInput\DXInputDevice.h">
+      <Filter>InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="DxInput\KeyBoard\KeyDevice.h">
+      <Filter>InputManager\KeyDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="DxInput\Mouse\MouseDevice.h">
+      <Filter>InputManager\MouseDevice</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture\TextureManager.h">
+      <Filter>TextureManager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp" />
@@ -60,6 +177,54 @@
     </ClCompile>
     <ClCompile Include="BehaviorTree\NodeBase.cpp">
       <Filter>BehaviorTree\NodeBase</Filter>
+    </ClCompile>
+    <ClCompile Include="XInput\XInput.cpp">
+      <Filter>XInput</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderManager\ShaderManager.cpp">
+      <Filter>ShaderManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex2D\Vertex2D.cpp">
+      <Filter>Vertex2D</Filter>
+    </ClCompile>
+    <ClCompile Include="TaskManager\TaskBase\TaskBase.cpp">
+      <Filter>TaskManager\TaskBase</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectBase\ObjectBase.cpp">
+      <Filter>ObjectBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Math.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\MyMatrix.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\MyVector.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound\SoundManager.cpp">
+      <Filter>SoundManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugTool\Timer\DebugTimer.cpp">
+      <Filter>DebugTool</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager\SceneManager.cpp">
+      <Filter>SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager\SceneBase\SceneBase.cpp">
+      <Filter>SceneManager\SceneBase</Filter>
+    </ClCompile>
+    <ClCompile Include="DxInput\DXInputDevice.cpp">
+      <Filter>InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="DxInput\KeyBoard\KeyDevice.cpp">
+      <Filter>InputManager\KeyDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="DxInput\Mouse\MouseDevice.cpp">
+      <Filter>InputManager\MouseDevice</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture\TextureManager.cpp">
+      <Filter>TextureManager</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
