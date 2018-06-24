@@ -4,7 +4,7 @@
  * @author kotani
  */
 #include "MyVector.h"
-
+#include "Math.h"
 
 namespace Lib
 {
@@ -157,7 +157,7 @@ namespace Lib
 
 	VECTOR3 VECTOR3::operator * (float _value) const
 	{
-		return VECTOR3(x * _value, y * _value, z - _value);
+		return VECTOR3(x * _value, y * _value, z * _value);
 	}
 
 	VECTOR3 VECTOR3::operator / (float _value) const
@@ -268,6 +268,51 @@ namespace Lib
 	bool VECTOR4::operator != (const VECTOR4& _obj) const
 	{
 		return (x != _obj.x && y != _obj.y && z != _obj.z && w != _obj.w);
+	}
+
+
+	//--------------------------
+	// Quoternion
+	//--------------------------
+
+	QUOTERNION::QUOTERNION(float _x, float _y, float _z)
+	{
+		x = _x;
+		y = _y;
+		z = _z;
+	}
+
+	QUOTERNION QUOTERNION::operator*(const QUOTERNION& _obj) const
+	{
+		QUOTERNION tmp;
+		VECTOR3 left = *this;
+		VECTOR3 right = _obj;
+
+		tmp.t = t * _obj.t;
+		Math::Vector3Dot(&(left * -1), &right);
+		tmp.t += Math::Vector3Dot(&(left * -1), &right);
+
+		float f1, f2, f3, f4;
+
+		f1 = this->t * right.x;
+		f2 = _obj.t * left.x;
+		f3 = left.y * right.z;
+		f4 = -left.z * right.y;
+		tmp.x = f1 + f2 + f3 + f4;
+
+		f1 = this->t * right.y;
+		f2 = _obj.t * left.y;
+		f3 = left.z * right.x;
+		f4 = -left.x * right.z;
+		tmp.y = f1 + f2 + f3 + f4;
+
+		f1 = this->t * right.z;
+		f2 = _obj.t * left.z;
+		f3 = left.x * right.y;
+		f4 = -left.y * right.x;
+		tmp.z = f1 + f2 + f3 + f4;
+
+		return tmp;
 	}
 
 

@@ -22,14 +22,31 @@ namespace Lib
 
 		float GetAngle(const VECTOR2& _pos1, const VECTOR2& _pos2)
 		{
-			return ToDegree(atan2(_pos2.y - _pos1.y, _pos2.x - _pos1.x));
+			return atan2(_pos2.y - _pos1.y, _pos2.x - _pos1.x);
+		}
+
+		VECTOR2 GetAngle(const VECTOR3& _pos1, const VECTOR3& _pos2)
+		{
+			VECTOR2 angle;
+			angle.x = atan2(_pos2.y - _pos1.y, _pos2.z - _pos1.z);
+			angle.y = atan2(_pos2.y - _pos1.y, _pos2.x - _pos1.x);
+			return angle;
 		}
 
 		VECTOR2 GetAngleMovePos(float _movement, float _angle)
 		{
 			VECTOR2 returnVar = {0.f,0.f};
-			returnVar.x = _movement * cos(ToRadian(_angle));
-			returnVar.y = _movement * sin(ToRadian(_angle));
+			returnVar.x = _movement * cos(_angle);
+			returnVar.y = _movement * sin(_angle);
+			return returnVar;
+		}
+
+		VECTOR3 GetAngleMovePos(float _movement, VECTOR2 _angle)
+		{
+			VECTOR3 returnVar = { 0.f,0.f,0.f };
+			returnVar.x = _movement * (cos(_angle.x) * cos(_angle.y));
+			returnVar.y = _movement * sin(_angle.y);
+			returnVar.z = _movement * (sin(_angle.x) * cos(_angle.y));
 			return returnVar;
 		}
 
@@ -165,6 +182,22 @@ namespace Lib
 			_pVector3->y *= len;
 			_pVector3->z *= len;
 			return _pVector3;
+		}
+
+		QUOTERNION QuoternionRotation(float _radian, VECTOR3* _pDir)
+		{
+			QUOTERNION tmp;
+			tmp.t = tmp.x = tmp.y = tmp.z = 0.0;
+			VECTOR3 normDir = *Vector3Normalize(_pDir);
+			float cosVal = cos(0.5f * _radian);
+			float sinVal = sin(0.5f * _radian);
+
+			tmp.t = cosVal;
+			tmp.x = sinVal * normDir.x;
+			tmp.y = sinVal * normDir.y;
+			tmp.z = sinVal * normDir.z;
+
+			return tmp;
 		}
 
 		MATRIX* MatrixLookAtLH(MATRIX* _pMatrix, VECTOR3* _eyePos, VECTOR3* _atPos, VECTOR3* _up)

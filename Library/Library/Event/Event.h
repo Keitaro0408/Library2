@@ -25,7 +25,7 @@ namespace Lib
 			bool  m_Bool;
 		};
 
-		std::unordered_map<char*, Data> eventData; //!< 格納されているデータ
+		std::unordered_map<std::string, Data> eventData; //!< 格納されているデータ
 		std::string eventName; //!< イベントの名前
 	};
 }

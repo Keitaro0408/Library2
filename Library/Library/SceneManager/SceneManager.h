@@ -36,7 +36,7 @@ namespace Lib
 
 		void AllRemoveScene()
 		{
-			m_pSceneList.clear();
+			m_pScenes.clear();
 		}
 
 		/**
@@ -87,7 +87,7 @@ namespace Lib
 		State							  m_State;
 		SceneBase*						  m_pCurrentScene; //!< 現在のシーン
 		std::string						  m_CurrentSceneName;
-		std::map<std::string, SceneBase*> m_pSceneList;
+		std::map<std::string, SceneBase*> m_pScenes;
 		bool							  m_IsGameEnd;
 	};
 }

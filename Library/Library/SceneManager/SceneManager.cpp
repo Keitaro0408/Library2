@@ -28,7 +28,7 @@ namespace Lib
 		switch (m_State)
 		{
 		case SCENE_CREATE:
-			m_pCurrentScene = m_pSceneList[m_CurrentSceneName];
+			m_pCurrentScene = m_pScenes[m_CurrentSceneName];
 			m_pCurrentScene->Initialize();
 			m_State = SCENE_PROC;
 			break;
@@ -50,17 +50,17 @@ namespace Lib
 
 	void SceneManager::AddScene(SceneBase* _pScene)
 	{
-		m_pSceneList[_pScene->GetSceneName()] = _pScene;
+		m_pScenes[_pScene->GetSceneName()] = _pScene;
 	}
 
 	void SceneManager::RemoveScene(std::string _sceneName)
 	{
-		m_pSceneList.erase(_sceneName);
+		m_pScenes.erase(_sceneName);
 	}
 
 	void SceneManager::ChangeScene(std::string _sceneName)
 	{
-		if (m_pSceneList.find(_sceneName) != m_pSceneList.end())
+		if (m_pScenes.find(_sceneName) != m_pScenes.end())
 		{
 			m_CurrentSceneName = _sceneName;
 		}

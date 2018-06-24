@@ -5,6 +5,7 @@
  */
 #ifndef MYMATRIX_H
 #define MYMATRIX_H
+#include <intrin.h>
 
 namespace Lib
 {

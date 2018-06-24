@@ -97,6 +97,17 @@ namespace Lib
 		float x, y, z, w;
 	}VECTOR4;
 
+	typedef struct QUOTERNION : public VECTOR3
+	{
+	public:
+		QUOTERNION() {};
+		QUOTERNION(float _x, float _y, float _z);
+
+		QUOTERNION operator * (const QUOTERNION&) const;
+
+		float t;
+	}QUOTERNION;
+
 
 	//--------------------------
 	// Color

@@ -8,6 +8,8 @@
 #include <string>
 #include <list>
 #include <functional>
+#include <algorithm>
+
 #include "..\Singleton\Singleton.h"
 #include "TaskBase\TaskBase.h"
 

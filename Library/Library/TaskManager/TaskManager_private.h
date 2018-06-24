@@ -1,4 +1,4 @@
-#ifndef TASKMANAGER_PRIVATE_H
+﻿#ifndef TASKMANAGER_PRIVATE_H
 #define TASKMANAGER_PRIVATE_H
 
 template<class Type>
@@ -22,15 +22,9 @@ void TaskManager<Type>::Run()
 template<class Type>
 void TaskManager<Type>::RemoveTask(Type* _pTask)
 {
-	for (const auto& itr : m_TaskBaseList)
-	{
-		if (*itr == _task)
-		{
-			m_TaskBaseList.erase(itr);
-			return;
-		}
-	}
-
+	m_TaskBaseList.erase(
+		std::remove(m_TaskBaseList.begin(), m_TaskBaseList.end(), _pTask),
+		m_TaskBaseList.end());
 }
 
 template<class Type>

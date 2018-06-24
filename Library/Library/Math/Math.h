@@ -7,10 +7,18 @@
 #define MATH_H
 #include "MyMatrix.h"
 #include "MyVector.h"
+#include <vector>
 
 #define MyLib_PI 3.14159265358979323846f
-#define Max(a,b) (((a) > (b)) ? (a) : (b));
-#define Min(a, b) (((a) < (b)) ? (a) : (b));
+
+#ifndef Max
+#define Max(a,b) (((a) > (b)) ? (a) : (b))
+#endif
+
+#ifndef Min
+#define Min(a, b) (((a) < (b)) ? (a) : (b))
+#endif
+
 
 namespace Lib
 {
@@ -44,6 +52,18 @@ namespace Lib
 		float GetAngle(const VECTOR2& _pos1, const VECTOR2& _pos2);
 
 		/**
+		 * _tで_start~_endを線形補間する
+		 * @param[in] _start 始点の座標
+		 * @param[in] _end 終点の座標
+		 * @param[in] _t 0~1の割合
+		 */
+		template<class Type>
+		Type Lerp(const Type& _start, const Type& _end, float _t)
+		{
+			return _start * (1.f - _t) + _end * _t;
+		}
+
+		/**
 		 * radianをdegreeに変換する
 		 * @param[in] _radian 角度(radian値)
 		 */
@@ -64,10 +84,12 @@ namespace Lib
 		/**
 		 * 設定した角度の距離分の移動量を求める
 		 * @param[in] _movement 移動量
-		 * @param[in] _angle 角度(degree値)
+		 * @param[in] _angle 角度(radian値)
 		 * @return 移動量
 		 */
 		VECTOR2 GetAngleMovePos(float _movement, float _angle);
+
+		VECTOR3 GetAngleMovePos(float _movement, VECTOR2 _angle);
 
 		/**
 		 * 単位行列を作成する
@@ -99,6 +121,11 @@ namespace Lib
 		 * @return 外積のvectorへのポインタ
 		 */
 		VECTOR3* Vector3Cross(VECTOR3* _pIn1, VECTOR3* _pIn2, VECTOR3* _pOut);
+
+		/**
+		 * 回転四元数を作成する
+		 */
+		QUOTERNION QuoternionRotation(float _radian, VECTOR3* _pDir);
 
 		/**
 		 * 転置行列を返す
@@ -165,7 +192,6 @@ namespace Lib
 		 * 左手座標系パースペクティブ射影行列を作成する。
 		 */
 		MATRIX* MatrixPerspectiveFovLH(MATRIX* _pMatrix, float _fovY, float _aspect, float _zNear, float _zFar);
-
 	}
 }
 

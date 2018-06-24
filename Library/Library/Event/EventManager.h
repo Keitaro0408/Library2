@@ -12,7 +12,7 @@
 #include <Windows.h>
 #include "..\Singleton\Singleton.h"
 #include "Event.h"
-#include "EventListenerBase.h"
+#include "IEventListener.h"
 
 namespace Lib
 {
@@ -28,7 +28,7 @@ namespace Lib
 		 * @param[in] _pEventListnerBaseList イベント待受クラス
 		 * @param[in] _category 登録するイベントのカテゴリ
 		 */
-		void AddListener(EventListenerBase* _pEventListenerBaseList, LPSTR _category);
+		void AddListener(IEventListener* _pIEventListener, LPSTR _category);
 
 		/**
 		 * イベントを送信する
@@ -36,18 +36,6 @@ namespace Lib
 		 * @param[in] _category 送信するイベントのカテゴリ
 		 */
 		void SendEvent(Event& _pEvent, LPSTR _category);
-
-		/**
-		 * リストにイベントを追加する
-		 * @param[in] _pEvent イベントクラス
-		 */
-		void AddEventList(Event* _pEvent);
-
-		/**
-		 * リストに登録しているイベントを実行して、リストを削除する。
-		 * @param[in] _category 実行するイベントのカテゴリ
-		 */
-		void Execute(LPSTR _category);
 
 		/**
 		 * 登録されている全てのイベントをリストから削除する
@@ -58,9 +46,8 @@ namespace Lib
 		EventManager(){};
 		~EventManager(){};
 
-		std::unordered_map<char*, std::list<EventListenerBase*>> m_pEventListenerBase;
+		std::unordered_map<std::string, std::list<IEventListener*>> m_pEventListener;
 		 
-		std::list<Event>			  m_pEventList;
 	};
 }
 

@@ -40,7 +40,7 @@ namespace Lib
 
 	};
 
-	using DrawTaskTaskManager = TaskManager<DrawTask>;
+	using DrawTaskManager = TaskManager<DrawTask>;
 }
 
 
